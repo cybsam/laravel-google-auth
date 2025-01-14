@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::controller(GoogleAuthController::class)->group(function(){
+    Route::get('auth/google', 'GoogleAuthRoute')->name('google.auth');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
