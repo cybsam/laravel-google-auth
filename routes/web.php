@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 Route::controller(GoogleAuthController::class)->group(function(){
     Route::get('auth/google', 'GoogleAuthRoute')->name('google.auth');
+    Route::get('auth/google-callback', 'GoogleAuthCallback')->name('google.auth.callback');
 });
 
 Route::get('/dashboard', function () {
